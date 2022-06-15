@@ -43,8 +43,8 @@ jobs:
       run: |
         pip install poetry
     - name: debug
-      run: ls 
-      run: ls ..
+      run: |
+        ls ..
     - name: Build package
       run: |
         rm -rf dist/

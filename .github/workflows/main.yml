@@ -54,13 +54,18 @@ jobs:
       run: |
         rm -rf dist/
         poetry build
-    - name: pypi-publish
-      # You may pin to the exact commit or the version.
-      uses: pypa/gh-action-pypi-publish@release/v1
+    - name: Publish distribution 📦 to Test PyPI
+      uses: pypa/gh-action-pypi-publish@master
       with:
-        # PyPI user
-        user: __token__
-        # Password for your PyPI user or an access token
-        password: ${{ secrets.PYPI_API_TOKEN }}
-        # The repository URL to use
-        repository_url: https://github.com/utiasDSL/gym-pybullet-drones
+        password: ${{ secrets.TEST_PYPI_API_TOKEN }}
+        repository_url: https://test.pypi.org/legacy/
+    # - name: pypi-publish
+    #   # You may pin to the exact commit or the version.
+    #   uses: pypa/gh-action-pypi-publish@release/v1
+    #   with:
+    #     # PyPI user
+    #     user: __token__
+    #     # Password for your PyPI user or an access token
+    #     password: ${{ secrets.PYPI_API_TOKEN }}
+    #     # The repository URL to use
+    #     repository_url: https://github.com/utiasDSL/gym-pybullet-drones

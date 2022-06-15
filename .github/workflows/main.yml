@@ -44,7 +44,7 @@ jobs:
         pip install poetry
     - name: debug
       run: |
-        ls ..
+        ls
     - name: Build package
       run: |
         rm -rf dist/
